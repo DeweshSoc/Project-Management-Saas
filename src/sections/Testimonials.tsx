@@ -7,6 +7,7 @@ import avatar6 from "@/assets/avatar-6.png";
 import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
+import { TestimonialCard } from "@/components/TestimonialCard";
 
 const testimonials = [
   {
@@ -65,6 +66,51 @@ const testimonials = [
   },
 ];
 
+const firstColumn = testimonials.slice(0,3);
+const secondColumn = testimonials.slice(3,6);
+const thirdColumn = testimonials.slice(6,9);
+
 export const Testimonials = () => {
-  return null;
+  return (
+      <section className="bg-white">
+          <div className="container flex flex-col items-center">
+              <div className="tag">Testimonials</div>
+              <div className="mt-5 text-center md:w-[540px]">
+                  <h2 className="font-bold text-[30px] tracking-tighter bg-gradient-to-b from-black to-[#001E7F] text-transparent bg-clip-text">
+                      What our users say
+                  </h2>
+                  <p className="mt-5 tracking-tight text-[22px] leading-[30px]">
+                      From intuitive design to powerful features, our app has
+                      become an essential tool for users around the world.
+                  </p>
+              </div>
+              <div className="flex gap-6">
+                  <div className="mt-10 flex flex-col gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+                      {firstColumn.map((testimonial) => (
+                          <TestimonialCard
+                              key={testimonial.username}
+                              {...testimonial}
+                          />
+                      ))}
+                  </div>
+                  <div className="hidden md:flex mt-10 flex-col gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+                      {secondColumn.map((testimonial) => (
+                          <TestimonialCard
+                              key={testimonial.username}
+                              {...testimonial}
+                          />
+                      ))}
+                  </div>
+                  <div className="hidden lg:flex mt-10 flex-col gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+                      {thirdColumn.map((testimonial) => (
+                          <TestimonialCard
+                              key={testimonial.username}
+                              {...testimonial}
+                          />
+                      ))}
+                  </div>
+              </div>
+          </div>
+      </section>
+  );
 };
