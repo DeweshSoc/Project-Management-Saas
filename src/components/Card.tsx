@@ -1,5 +1,8 @@
+"use client"
+
 import CheckSvg from "@/assets/check.svg";
 import { twMerge } from "tailwind-merge";
+import {motion} from "framer-motion";
 
 export function Card({
     title,
@@ -26,9 +29,19 @@ export function Card({
                     {title}
                 </h3>
                 {popular && (
-                    <div className="px-4 py-1.5 rounded-xl text-sm font-medium border border-[#ffffff]/20 bg-[linear-gradient(to_right,#DD7DFF_20%,#E1CD86_40%,#8BCB92_60%,#71C2EF_80%,#3BFFFF_90%,#DD7DFF_100%)] bg-clip-text text-transparent">
+                    <motion.div 
+                    animate={{
+                        backgroundPositionX:"-100%"
+                    }}
+                    transition={{
+                        duration:1.5,
+                        repeatType:"loop",
+                        repeat:Infinity,
+                        ease:'linear'
+                    }}
+                    className="px-4 py-1.5 rounded-xl text-sm font-medium border border-[#ffffff]/20 bg-[linear-gradient(to_right,#DD7DFF,#E1CD86,#8BCB92,#71C2EF,#3BFFFF,#DD7DFF,#E1CD86,#8BCB92,#71C2EF,#3BFFFF,#DD7DFF)] [background-size:200%] bg-clip-text text-transparent">
                         Most Popular
-                    </div>
+                    </motion.div>
                 )}
             </div>
             <div className="mt-[30px] flex items-baseline gap-1">

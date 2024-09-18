@@ -67,7 +67,7 @@ export const Pricing = () => {
                 </div>
 
                 {/* cards */}
-                <div className="w-full flex flex-col gap-y-6 mt-10 lg:flex-row lg:justify-between lg:items-end">
+                <div className="w-full flex flex-col items-center gap-y-6 mt-10 lg:flex-row lg:justify-between lg:items-end">
                     {pricingTiers.map((tier) => (
                         <Card key={tier.title} {...tier} />
                     ))}

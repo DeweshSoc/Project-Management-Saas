@@ -8,6 +8,7 @@ interface CardProps {
 }
 
 interface TestimonialCardProps{
+    idx:string
     text:string,
     imageSrc:string,
     name:string,
