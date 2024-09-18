@@ -10,6 +10,7 @@ import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
 import { TestimonialCard } from "@/components/TestimonialCard";
+import TestimonialReel from "@/components/TestimonialReel";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -89,83 +90,14 @@ export const Testimonials = () => {
                     </p>
                 </div>
                 <div className="flex gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
-                    <div className="mt-5 max-h-[738px] overflow-hidden">
-                        <motion.div
-                            animate={{
-                                translateY: "-50%",
-                            }}
-                            transition={{
-                                duration: 15,
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                ease: "linear",
-                            }}
-                            className=" flex flex-col gap-6 "
-                        >
-                            {[...new Array(2)].map((_, idx) => (
-                                <React.Fragment key={idx}>
-                                    {firstColumn.map((testimonial, i) => (
-                                        <TestimonialCard
-                                            idx={`${idx}${i}`}
-                                            key={testimonial.username}
-                                            {...testimonial}
-                                        />
-                                    ))}
-                                </React.Fragment>
-                            ))}
-                        </motion.div>
+                    <div className="mt-5 max-h-[738px]">
+                        <TestimonialReel column={firstColumn} duration={15}/>
                     </div>
                     <div className="hidden md:block mt-5 max-h-[738px] overflow-hidden">
-                        <motion.div
-                            animate={{
-                                translateY: "-50%",
-                            }}
-                            transition={{
-                                duration: 19,
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                ease: "linear",
-                            }}
-                            className=" flex flex-col gap-6 "
-                        >
-                            {[...new Array(2)].map((_, idx) => (
-                                <React.Fragment key={idx}>
-                                    {secondColumn.map((testimonial, i) => (
-                                        <TestimonialCard
-                                            idx={`${idx}${i}`}
-                                            key={testimonial.username}
-                                            {...testimonial}
-                                        />
-                                    ))}
-                                </React.Fragment>
-                            ))}
-                        </motion.div>
+                        <TestimonialReel column={secondColumn} duration={19}/>
                     </div>
                     <div className="hidden lg:block mt-5 max-h-[738px] overflow-hidden">
-                        <motion.div
-                            animate={{
-                                translateY: "-50%",
-                            }}
-                            transition={{
-                                duration: 17,
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                ease: "linear",
-                            }}
-                            className=" flex flex-col gap-6 "
-                        >
-                            {[...new Array(2)].map((_, idx) => (
-                                <React.Fragment key={idx}>
-                                    {thirdColumn.map((testimonial, i) => (
-                                        <TestimonialCard
-                                            idx={`${idx}${i}`}
-                                            key={testimonial.username}
-                                            {...testimonial}
-                                        />
-                                    ))}
-                                </React.Fragment>
-                            ))}
-                        </motion.div>
+                        <TestimonialReel column={thirdColumn} duration={17}/>
                     </div>
                   
                 </div>
