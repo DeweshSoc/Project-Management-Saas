@@ -29,7 +29,7 @@ export const Footer = () => {
                         <Pinterest />
                         <Youtube />
                     </div>
-                    <p className="text-center text-sm">© 2024 Your Company, Inc. All rights reserved.</p>
+                    <p className="text-center text-sm">© 2024 Aikido, Inc. All rights reserved.</p>
                 </div>
             </div>
         </footer>
